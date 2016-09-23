@@ -20,6 +20,7 @@ class Root6 < Formula
   depends_on "xrootd" => :optional
   depends_on "openssl" => :recommended # use homebrew's openssl
   depends_on :python => :recommended # make sure we install pyroot
+  depends_on :python3 => :optional
   depends_on :x11 => :recommended if OS.linux?
   depends_on "gsl" => :recommended
   # root5 obviously conflicts, simply need `brew unlink root`
@@ -54,6 +55,7 @@ class Root6 < Formula
       -Droofit=ON
       -Dminuit2=ON
       #{config_opt("python")}
+      #{config_opt("python3")}
       #{config_opt("ssl", "openssl")}
       #{config_opt("xrootd")}
       #{config_opt("mathmore", "gsl")}
